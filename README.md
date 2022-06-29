@@ -1,2 +1,2 @@
 # riscv_decoder
-RISC-V command decoder 
+RISC-V instruction decoder 

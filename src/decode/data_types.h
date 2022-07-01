@@ -48,6 +48,50 @@ struct Jump_Instruction32_raw{
     unsigned int opcode: 7;
 };
 
+
+
+
+struct Reg_Instruction32{
+    unsigned int funct7: 7;
+    unsigned int rs2: 5;
+    unsigned int rs1: 5;
+    unsigned int funct3: 3;
+    unsigned int rd :    5;
+    unsigned int opcode: 7;
+};
+struct Imm_Instruction32{
+    int imm: 12;
+    unsigned int rs1: 5;
+    unsigned int funct3: 3;
+    unsigned int rd : 5;
+    unsigned int opcode: 7;
+};
+struct UpImm_Instruction32{
+    int imm: 20;
+    unsigned int rd : 5;
+    unsigned int opcode: 7;
+};
+struct Store_Instruction32{
+    int imm:            12;
+    unsigned int rs2:   5;
+    unsigned int rs1:   5;
+    unsigned int funct3: 3;
+    unsigned int opcode: 7;
+};
+struct Branch_Instruction32{
+    int imm: 12;
+    unsigned int rs2:5;
+    unsigned int rs1:5;
+    unsigned int funct3: 3;
+    unsigned int opcode: 7;
+};
+struct Jump_Instruction32{
+    int imm: 20;
+    unsigned int rd : 5;
+    unsigned int opcode: 7;
+};
+
+
 union Instruction32
 {
     struct Reg_Instruction32_raw reg;

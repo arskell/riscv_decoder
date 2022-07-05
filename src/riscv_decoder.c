@@ -2,9 +2,10 @@
 
 #include "decode.h"
 #include "stdlib.h"
-
+#include "string.h"
 
 void print_help();
+
 
 int main(int argc, char** argv){
     
@@ -20,9 +21,14 @@ int main(int argc, char** argv){
         return 0;
     }
 
+    union Instruction32 instr;
+    
+    memcpy(&instr, &value, 4);
 
-    printf("%ld\n", value);
+
+    printf("opcode %d\n", instr.opcode);
 }
+
 
 
 void print_help(){

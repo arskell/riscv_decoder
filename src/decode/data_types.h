@@ -92,6 +92,12 @@ struct Jump_Instruction32{
 };
 
 
+union Instruction16
+{
+    /* data */
+};
+
+
 union Instruction32
 {
     struct Reg_Instruction32_raw reg;

@@ -94,6 +94,7 @@ struct Jump_Instruction32{
 
 union Instruction16
 {
+    //todo 16 bit csr 
     /* data */
 };
 

@@ -24,4 +24,41 @@ struct Imm_Instruction32 convert_to_imm(union Instruction32 inst)
     imm.rs1 = inst.imm.rs1;
     imm.imm = inst.imm.imm;
     return imm;
+}
+
+
+struct UpImm_Instruction32 convert_to_upimm(union Instruction32 inst)
+{
+    struct UpImm_Instruction32 instr;
+    instr.opcode = inst.opcode;
+    instr.imm = inst.up_imm.imm;
+    instr.rd = inst.up_imm.rd;
+    
+    return instr;
+}
+
+
+struct Store_Instruction32 convert_to_store(union Instruction32 inst)
+{
+    struct Store_Instruction32 instr;
+    instr.opcode = inst.opcode;
+    /*TODO*/
+    return instr;
+};
+
+struct Branch_Instruction32 convert_to_branch(union Instruction32 inst)
+{
+    struct Branch_Instruction32 instr;
+    instr.opcode = inst.opcode;
+    /*TODO*/
+    return instr;
+};
+
+
+struct Jump_Instruction32 convert_to_jump(union Instruction32 inst)
+{
+    struct Jump_Instruction32 instr;
+    instr.opcode = inst.opcode;
+    /*TODO*/
+    return instr;
 };

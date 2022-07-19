@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "decode.h"
 #include "decode/instr_fmt.h"
-#include "stdlib.h"
-#include "string.h"
+
 
 void print_help();
 

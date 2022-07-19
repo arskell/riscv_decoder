@@ -39,7 +39,6 @@ int main(int argc, char** argv){
 }
 
 
-
 void print_help(){
     printf("Utility for converting given value into riscv instruction\n");
     printf("Usage riscv_decoder [val]\n");

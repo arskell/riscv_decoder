@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #include "decode.h"
+#include "decode/instr_fmt.h"
 #include "stdlib.h"
 #include "string.h"
 
@@ -22,11 +23,19 @@ int main(int argc, char** argv){
     }
 
     union Instruction32 instr;
-    
     memcpy(&instr, &value, 4);
 
+    
+    char buffer[255];
 
-    printf("opcode %d\n", instr.opcode);
+    printf("As reg instruction:\r\n");
+    fmt_reg(buffer, convert_to_reg(instr));
+    puts(buffer);
+
+    printf("\r\nAs imm instruction\r\n");
+    fmt_imm(buffer, convert_to_imm(instr));
+    puts(buffer);
+
 }
 
 

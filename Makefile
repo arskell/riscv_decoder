@@ -1,7 +1,8 @@
 CC = gcc
 SRC_DIR = ./src
 FILES = $(SRC_DIR)/riscv_decoder.c \
-		$(SRC_DIR)/decode.c
+		$(SRC_DIR)/decode.c \
+		$(SRC_DIR)/decode/instr_fmt.c
 BUILD_DIR = ./build
 EXE_NAME = riscv_decoder
 OPTS = -Wall

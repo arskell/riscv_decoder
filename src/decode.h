@@ -40,25 +40,40 @@ struct UpImm_Instruction32 convert_to_upimm(union Instruction32 inst)
 
 struct Store_Instruction32 convert_to_store(union Instruction32 inst)
 {
-    struct Store_Instruction32 instr;
-    instr.opcode = inst.opcode;
-    /*TODO*/
-    return instr;
+    struct Store_Instruction32 instr_ret;
+    instr_ret.opcode = inst.opcode;
+    instr_ret.rs1 = inst.store.rs1;
+    instr_ret.rs2 = inst.store.rs2;
+    instr_ret.imm.imm_data = 0;
+    instr_ret.imm.imm_low = inst.store.imm_4_0;
+    instr_ret.imm.imm_upper = inst.store.imm_11_5;
+    return instr_ret;
 };
 
 struct Branch_Instruction32 convert_to_branch(union Instruction32 inst)
 {
-    struct Branch_Instruction32 instr;
-    instr.opcode = inst.opcode;
-    /*TODO*/
-    return instr;
+    struct Branch_Instruction32 instr_ret;
+    instr_ret.opcode = inst.opcode;
+    instr_ret.rs1 = inst.branch.rs1;
+    instr_ret.rs2 = inst.branch.rs2;
+    instr_ret.imm.imm_data = 0;
+    instr_ret.imm.imm_low = inst.branch.imm_4_1;
+    instr_ret.imm.imm_mid = inst.branch.imm_10_5;
+    instr_ret.imm.imm_up = inst.branch.imm_11;
+    instr_ret.imm.sign = inst.branch.imm_12;
+    return instr_ret;
 };
 
 
 struct Jump_Instruction32 convert_to_jump(union Instruction32 inst)
 {
-    struct Jump_Instruction32 instr;
-    instr.opcode = inst.opcode;
-    /*TODO*/
-    return instr;
+    struct Jump_Instruction32 instr_ret;
+    instr_ret.opcode = inst.opcode;
+    instr_ret.rd = inst.jump.rd;
+    instr_ret.imm.imm_data = 0;
+    instr_ret.imm.imm_low = inst.jump.imm_10_1;
+    instr_ret.imm.imm_mid = inst.jump.imm_11;
+    instr_ret.imm.imm_mid = inst.jump.imm_19_12;
+    instr_ret.imm.sign = inst.jump.imm_20;
+    return instr_ret;
 };

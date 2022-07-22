@@ -33,8 +33,25 @@ int main(int argc, char** argv){
     fmt_reg(buffer, convert_to_reg(instr));
     puts(buffer);
 
-    printf("\r\nAs imm instruction\r\n");
+    printf("\r\nAs imm instruction:\r\n");
     fmt_imm(buffer, convert_to_imm(instr));
+    puts(buffer);
+
+    printf("\r\nAs upper imm instruction:\r\n");
+    fmt_up_imm(buffer, convert_to_upimm(instr));
+    puts(buffer);
+
+    printf("\r\nAs store instruction:\r\n");
+    fmt_store(buffer, convert_to_store(instr));
+    puts(buffer);
+
+
+    printf("\r\nAs branch instruction:\r\n");
+    fmt_branch(buffer, convert_to_branch(instr));
+    puts(buffer);
+
+    printf("\r\nAs jump instruction:\r\n");
+    fmt_jump(buffer, convert_to_jump(instr));
     puts(buffer);
 
 }

@@ -11,3 +11,6 @@ all:
 	mkdir $(BUILD_DIR) -p
 	$(CC) $(FILES) $(OPTS) -o $(BUILD_DIR)/$(EXE_NAME) 
 
+release:
+	mkdir $(BUILD_DIR) -p
+	$(CC) $(FILES) $(OPTS) --static -O2 -o $(BUILD_DIR)/$(EXE_NAME) 
